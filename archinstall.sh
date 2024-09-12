@@ -117,26 +117,26 @@ if ! git --version; then
     fi
 fi
 
-cd /root || exit 1
+#cd /root || exit 1
 
-if [ -e instantARCH ]; then
-    echo "removing previous instantARCH data"
-    rm -rf instantARCH
-fi
+#if [ -e instantARCH ]; then
+#    echo "removing previous instantARCH data"
+#    rm -rf instantARCH
+#fi
 
-if [ -n "$TESTBRANCH" ]; then
-    if [ -n "$3" ]; then
-        export CUSTOMINSTANTREPO="$3"
-    fi
+#if [ -n "$TESTBRANCH" ]; then
+#    if [ -n "$3" ]; then
+#        export CUSTOMINSTANTREPO="$3"
+#    fi
 
-    echo "using installer branch $TESTBRANCH"
-    git clone --single-branch --branch "$TESTBRANCH" --depth=1 https://github.com/instantos/instantARCH.git
-    export INSTANTARCHTESTING="true"
-else
-    git clone --depth=1 https://github.com/instantos/instantARCH.git
-fi
+#    echo "using installer branch $TESTBRANCH"
+#    git clone --single-branch --branch "$TESTBRANCH" --depth=1 https://github.com/instantos/instantARCH.git
+#    export INSTANTARCHTESTING="true"
+#else
+#    git clone --depth=1 https://github.com/instantos/instantARCH.git
+#fi
 
-cd instantARCH || exit 1
+#cd instantARCH || exit 1
 
 mkdir config &>/dev/null
 git rev-parse HEAD >config/instantarchversion
